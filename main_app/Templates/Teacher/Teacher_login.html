@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Teacher Login
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5 col-lg-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4">Teacher Login</h4>
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="InputUsername" class="form-label"><strong>Username</strong></label>
+            <input type="text" name="username" class="form-control" id="InputUsername" aria-describedby="UsernameHelp" required />
+          </div>
+          <div class="mb-3">
+            <label for="InputPassword1" class="form-label"><strong>Password</strong></label>
+            <input type="password" name="password" class="form-control" id="InputPassword1" required />
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          {% if message %}
+            <p style="color: red;">{{ message }}</p>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include Bootstrap CSS and JS -->
+{% endblock %}

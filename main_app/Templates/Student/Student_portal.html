@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Student Portal
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Student Portal</h2>
+    <h4 class="text-center">Welcome, {{ user.username }}</h4>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Available Quizzes</h5>
+            <p class="card-text">Attempt available quizzes to test your knowledge.</p>
+            <a href="{% url 'question_list' %}" class="btn btn-primary">Answer</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Check Results</h5>
+            <p class="card-text">View your quiz results and track your progress.</p>
+            <a href="{% url 'recent_results' %}" class="btn btn-success">Check</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

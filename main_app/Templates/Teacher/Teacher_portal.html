@@ -1,0 +1,109 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Teacher Portal
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Teacher Portal</h2>
+    <h4 class="text-center mb-4">Welcome, {{ user.username }}</h4>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Create a new Class</h5>
+            <p class="card-text">Organize and manage your classes.</p>
+            <a href="{% url 'create_class' %}" class="btn btn-primary">Create</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Create a new Lesson</h5>
+            <p class="card-text">Design new lessons for your students.</p>
+            <a href="{% url 'create_lesson' %}" class="btn btn-success">Create</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Create a new Quiz</h5>
+            <p class="card-text">Develop quizzes to evaluate student progress.</p>
+            <a href="{% url 'create_quiz' %}" class="btn btn-warning">Create</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Check Student Results</h5>
+            <p class="card-text">Review and analyze student performance.</p>
+            <a href="{% url 'check_result' %}" class="btn btn-info">Check</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Add students inthe class</h5>
+            <p class="card-text">Add students inthe class to check the progress of the individuals.</p>
+            <a href="{% url 'assign_class' %}" class="btn btn-secondary">Check</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4 class="mb-3">Class List</h4>
+      </div>
+
+      {% for class in classes %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ class.name }}</h5>
+              <a href="{% url 'class_detail' class.id %}" class="btn btn-info">View Class</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4 class="mb-3">Lesson List</h4>
+      </div>
+
+      {% for lesson in Lessons %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ forloop.counter }}. {{ lesson.title }}</h5>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4 class="mb-3">Quiz List</h4>
+      </div>
+
+      {% for quiz in Quizez %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ quiz.question_text }}</h5>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

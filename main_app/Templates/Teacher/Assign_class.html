@@ -1,0 +1,26 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Assign Student to Class
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title text-center mb-4">Assign Student to Class</h4>
+            <form action="" method="post">
+              {% csrf_token %}
+              {{ Aform.as_p }}
+              <div class="d-grid">
+                <input type="submit" value="Assign" class="btn btn-primary" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

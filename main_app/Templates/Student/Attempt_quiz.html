@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Attempt Quiz
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h1 class="card-title">{{ question.question_text }}</h1>
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="answer" class="form-label">Your Answer</label>
+                <input type="text" name="answer" class="form-control" id="answer" required />
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

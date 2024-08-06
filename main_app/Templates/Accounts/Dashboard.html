@@ -1,0 +1,27 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Admin Dashboard
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Admin Dashboard</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h4 class="card-title">Create Teacher Profile</h4>
+            <p class="card-text">Manage and create new teacher accounts to help facilitate the educational process.</p>
+            <a href="{% url 'create_teacher_account' %}" class="btn btn-primary">Create Teacher Account</a>
+          </div>
+        </div>
+      </div>
+      <!-- You can add more sections here if needed -->
+    </div>
+  </div>
+
+  <!-- Include Bootstrap CSS and JS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Recent Results
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center mb-4">Recent Results</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      {% for result in recent_results %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ result.student_name }}</h5>
+              <p class="card-text">
+                <strong>Score:</strong> {{ result.score }}
+              </p>
+              <p class="card-text">
+                <strong>Date:</strong> {{ result.date }}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

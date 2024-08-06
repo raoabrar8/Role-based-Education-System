@@ -1,0 +1,20 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+  Results
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <h1 class="card-title">Your Score</h1>
+            <h2 class="display-4">{{ score }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

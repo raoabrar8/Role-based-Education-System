@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+
+{% block Title %}
+  Role-Based Education System
+{% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="text-center">
+      <h2 class="mb-4">Education System</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-lg">
+          <div class="card-body text-center">
+            <h5 class="card-title">Student Account</h5>
+            <p class="card-text">Access resources and track your academic progress.</p>
+            <a href="{% url 'Student_login' %}" class="btn btn-primary">Student</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-body text-center">
+            <h5 class="card-title">Teacher Account</h5>
+            <p class="card-text">Manage classes, Courses, and communicate with students.</p>
+            <a href="{% url 'Teacher_login' %}" class="btn btn-success">Teacher</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
